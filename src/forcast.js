@@ -36,7 +36,7 @@ function Forcast(props) {
 
   useEffect(() => {
     search("Delhi");
-  }, []);
+  }, [search]);
 
   return (
     <div className="forecast">
@@ -77,6 +77,7 @@ function Forcast(props) {
                 </p>
                 <img
                   className="temp"
+                  alt= "Weather Icon"
                   src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
                 />
               </li>
