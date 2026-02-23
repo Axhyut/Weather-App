@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Component } from "react";
+import React, { useState, useEffect} from "react";
 import axios from "axios";
 import apiKeys from "./apiKeys";
 import ReactAnimatedWeather from "react-animated-weather";
@@ -12,7 +12,7 @@ function Forcast(props) {
     axios
       .get(
         `${apiKeys.base}weather?q=${
-          city != "[object Object]" ? city : query
+          city !== "[object Object]" ? city : query
         }&units=metric&APPID=${apiKeys.key}`
       )
       .then((response) => {
@@ -26,12 +26,7 @@ function Forcast(props) {
         setError({ message: "Not Found", query: query });
       });
   };
-  function checkTime(i) {
-    if (i < 10) {
-      i = "0" + i;
-    } // add zero in front of numbers < 10
-    return i;
-  }
+  
 
   const defaults = {
     color: "white",
@@ -67,12 +62,13 @@ function Forcast(props) {
             {" "}
             <img
               src="https://images.avishkaar.cc/workflow/newhp/search-white.png"
+              alt= "Search"
               onClick={search}
             />
           </div>
         </div>
         <ul>
-          {typeof weather.main != "undefined" ? (
+          {typeof weather.main !== "undefined" ? (
             <div>
               {" "}
               <li className="cityHead">
