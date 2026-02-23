@@ -34,9 +34,10 @@ function Forcast(props) {
     animate: true,
   };
 
+  // eslint-disable-next-line
   useEffect(() => {
     search("Delhi");
-  }, [search]);
+  }, []);
 
   return (
     <div className="forecast">
