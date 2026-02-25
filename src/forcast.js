@@ -34,7 +34,7 @@ function Forcast(props) {
     animate: true,
   };
 
-  // eslint-disable-next-line
+  
   useEffect(() => {
     search("Delhi");
   }, []);
@@ -64,7 +64,7 @@ function Forcast(props) {
             <img
               src="https://images.avishkaar.cc/workflow/newhp/search-white.png"
               alt= "Search"
-              onClick={search}
+              onClick={() => search(query)}
             />
           </div>
         </div>
